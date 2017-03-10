@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+</head>
+
+<body>
+  <ride-workspace class="scrollbars-visible-always">
+
+    <ride-panel-container class="header"></ride-panel-container>
+
+    <ride-pane-container>
+      <ride-pane-axis class="horizontal">
+        <ride-pane style="flex-grow: 0; flex-basis: 200px;">
+          <div class="tree-view-resizer tool-panel">
+            <div class="tree-view-scroller">
+              <ol class="tree-view full-menu list-tree has-collapsable-children">
+                <li class="directory entry list-nested-item project-root expanded">
+                  <div class="header list-item project-root-header">
+                    <span class="name icon icon-file-directory">A Directory</span>
+                  </div>
+                  <ol class="entries list-tree">
+                    <li class="list-nested-item">
+                      <div class="list-item">
+                        <span class="icon icon-file-directory">Nested Directory</span>
+                      </div>
+                      <ol class="list-tree">
+                        <li class="list-item">
+                          <span class="icon icon-file-text text-info">File one</span>
+                        </li>
+                        <li class="list-item">
+                          <span class="icon icon-file-text">File one</span>
+                        </li>
+                        <li class="list-item">
+                          <span class="icon icon-file-text">File one</span>
+                        </li>
+                      </ol>
+                    </li>
+                    <li class="list-nested-item collapsed">
+                      <div class="list-item">
+                        <span class="icon icon-file-directory">Collapsed Nested Directory</span>
+                      </div>
+                      <ol class="list-tree">
+                        <li class="list-item">
+                          <span class="icon icon-file-text">File one</span>
+                        </li>
+                      </ol>
+                    </li>
+                    <li class="list-item">
+                      <span class="icon icon-file-text">File one</span>
+                    </li>
+                    <li class="list-item selected">
+                      <span class="icon icon-file-text">File three .selected!</span>
+                    </li>
+                  </ol>
+                </li>
+                <li class="list-item">
+                  <span class="icon icon-file-text">.icon-file-text</span>
+                </li>
+                <li class="list-item">
+                  <span class="icon icon-file-text">.icon-file-text</span>
+                </li>
+                <li class="list-item">
+                  <span class="icon icon-file-text text-error">.icon-file-text</span>
+                </li>
+                <li class="list-item">
+                  <span class="icon icon-file-media">With icon-file-media.jpg</span>
+                </li>
+                <li class="list-item">
+                  <span class="icon icon-book">With icon-book</span>
+                </li>
+                <li class="list-item">
+                  <span class="icon icon-file-symlink-file">.icon-file-symlink-file</span>
+                </li>
+              </ol>
+            </div>
+            <div class="tree-view-resize-handle"></div>
+          </div>
+        </ride-pane>
+        <ride-pane class="active" style="flex-grow: 3;">
+          <ul class="list-inline tab-bar inset-panel">
+            <li class="texteditor tab modified right-clicked">
+              <div class="title">untitled</div>
+              <div class="close-icon"></div>
+            </li>
+            <li class="texteditor tab">
+              <div class="title">untitled</div>
+              <div class="close-icon"></div>
+            </li>
+            <li class="tab active">
+              <div class="title">Styleguide</div>
+              <div class="close-icon"></div>
+            </li>
+          </ul>
+          <div class="item-views">
+            <div class="styleguide pane-item">
+              <div id="editor-container" style="width:100%;height:100%;"></div>
+            </div>
+          </div>
+        </ride-pane>
+        <ride-pane-resize-handle class="horizontal"></ride-pane-resize-handle>
+        <ride-pane style="flex-grow: 0; flex-basis: 300px;">
+          <ul class="list-inline tab-bar inset-panel">
+            <li class="tab active">
+              <div class="title">Property Inspector</div>
+              <div class="close-icon"></div>
+            </li>
+          </ul>
+          <div class="item-views">
+            <div class="styleguide pane-item">
+              <header class="styleguide-header">
+                <h1>Header</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+              </header>
+              <main class="styleguide-sections">
+                <section class="bordered">
+                  <h1 class="section-heading">Controls Library</h1>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+                  <h3>Button Groups &amp; Selectors</h3>
+                  <div class="control">
+                    <div class="control-rendered">
+                      <div class='block'>
+                        <div class="control-wrap">
+                          <div class="label">Sample</div>
+                          <div class="controls">
+                            <div class='btn-group'>
+                              <button class='btn'>One</button>
+                              <button class='btn selected'>Two</button>
+                              <button class='btn'>Three</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='block'>
+                        <div class="control-wrap">
+                          <div class="label">Sample 2</div>
+                          <div class="controls">
+                            <div class='btn-group'>
+                              <button class='btn'>1</button>
+                              <button class='btn'>2</button>
+                              <button class='btn selected'>3</button>
+                              <button class='btn'>4</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='block'>
+                        <div class="control-wrap">
+                          <div class="label">Sample 3</div>
+                          <div class="controls">
+                            <div class='btn-group'>
+                              <button class='btn selected'>One</button>
+                              <button class='btn selected'>Two</button>
+                              <button class='btn'>Three</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='block'>
+                        <div class="control-wrap">
+                          <div class="label">Sample 4</div>
+                          <div class="controls">
+                            <div class='btn-group'>
+                              <button class='btn'>One</button>
+                              <button class='btn selected'>Two</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='block'>
+                        <div class="control-wrap">
+                          <div class="label">Selector</div>
+                          <div class="controls">
+                            <select class='input-select'><option>Option 1</option><option>Option 2</option><option>Option 3</option></select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h3>Selectors</h3>
+                  <div class="control">
+                    <div class="control-rendered">
+                      <div class='block'>
+                        <div class="control-wrap">
+                          <div class="label">Range</div>
+                          <div class="controls"><input class='input-range' type='range'></div>
+                        </div>
+                      </div>
+                      <div class='block'>
+                        <div class="control-wrap">
+                          <div class="label">Number</div>
+                          <div class="controls"><input class='input-number' type='number' min='1' max='10' placeholder='1-10'></div>
+                        </div>
+                      </div>
+                      <div class='block'>
+                        <div class="control-wrap">
+                          <div class="label">Color</div>
+                          <div class="controls"><input class='input-color' type='color' value='#FF85FF'></div>
+                        </div>
+                      </div>
+                      <div class='block'>
+                        <div class="control-wrap">
+                          <div class="label">Selector</div>
+                          <div class="controls"><select class='input-select'><option>Option 1</option><option>Option 2</option><option>Option 3</option></select></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h3>Booleans</h3>
+                  <div class="control">
+                    <div class="control-rendered">
+                      <div class='block'>
+                        <div class="control-wrap">
+                          <div class="label">Checkbox</div>
+                          <div class="controls"><input class='input-checkbox' type='checkbox' checked></div>
+                        </div>
+                      </div>
+                      <div class='block'>
+                        <div class="control-wrap">
+                          <div class="label">Toggle</div>
+                          <div class="controls"><input class='input-toggle' type='checkbox' checked></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h3>Inputs Alternate</h3>
+                  <div class="control">
+                    <div class="control-rendered">
+                      <div class='block'>
+                        <div class="control-wrap">
+                          <div class="label">Text Input</div>
+                          <div class="controls">
+                            <input class='input-text' type='text' placeholder='Text'>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='block'>
+                        <div class="control-wrap">
+                          <div class="label">Search Input</div>
+                          <div class="controls">
+                            <input class='input-search' type='search' placeholder='Search'>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h3>Wide Inputs</h3>
+                  <div class="control">
+                    <div class="control-rendered">
+                      <input class='input-text' type='text' placeholder='Text'>
+                      <input class='input-search' type='search' placeholder='Search'>
+                      <textarea class='input-textarea' placeholder='Text Area'></textarea>
+                    </div>
+                  </div>
+                </section>
+                <section class="bordered">
+                  <h1 class="section-heading">Section Two</h1>
+                  <p>Lorem ipsum.</p>
+                  <h3>Radios</h3>
+                  <div class="control">
+                    <div class="control-rendered">
+                      <div class='block'>
+                        <label class='input-label'><input class='input-radio' type='radio' name='radio'> Radio</label>
+                      </div>
+                      <div class='block'>
+                        <label class='input-label'><input class='input-radio' type='radio' name='radio' checked> Radio</label>
+                      </div>
+                      <div class='block'>
+                        <label class='input-label'><input class='input-radio' type='radio' name='radio' checked> Radio</label>
+                      </div>
+                      <div class='block'>
+                        <label class='input-label'><input class='input-radio' type='radio' name='radio' checked> Radio</label>
+                      </div>
+                    </div>
+                  </div>
+                  <h3>File Stuff</h3>
+                  <div class="control">
+                    <div class="control-rendered">
+                      <div class='block'>
+                        <label class='icon icon-file-directory'>Another field with an icon</label>
+                        <ride-text-editor mini>Something else you typed...</ride-text-editor>
+                      </div>
+                      <div class='block'>
+                        <button class='btn'>Do it</button>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <section class="bordered">
+                  <h1 class="section-heading">Section Three</h1>
+                  <p>Lorem ipsum.</p>
+                  <h3>Popover List</h3>
+                  <div class="control">
+                    <div class="control-rendered">
+                      <div class='select-list popover-list'>
+                        <ride-text-editor mini>'User types here..'</ride-text-editor>
+                        <ol class='list-group'>
+                          <li class='selected'>one</li>
+                          <li>two</li>
+                          <li>three</li>
+                        </ol>
+                      </div>
+                    </div>
+                  </div>
+                  <h3>Pre</h3>
+                  <div class="control">
+                    <div class="control-rendered">
+                      <div class="block">
+                        <pre class="editor-colors example-html">
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                      </pre>
+                      </div>
+                    </div>
+                  </div>
+                  <h3>More Icon Buttons</h3>
+                  <div class="control">
+                    <div class="control-rendered">
+                      <div class="block">
+                        <div class="control-wrap">
+                          <label>Options</label>
+                          <div class="controls">
+                            <div class="btn-group">
+                              <button class="btn icon icon-bold"></button>
+                              <button class="btn icon icon-italic"></button>
+                              <button class="btn icon icon-settings"></button>
+                              <button class="btn icon icon-screen-normal"></button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h3>Time Traveller</h3>
+                  <div class="control">
+                    <div class="control-rendered">
+                      <div class="block">
+                        <input class='input-range' type='range'>
+                      </div>
+                      <div class="block">
+                        <div class="control-wrap">
+                          <div class="controls">
+                            <div class='btn-group btn-group-lg'>
+                              <button class='btn icon icon-jump-left'></button>
+                              <button class='btn icon icon-playback-pause'></button>
+                              <button class='btn icon icon-playback-play'></button>
+                              <button class='btn icon icon-jump-right'></button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="block">
+                        <ride-text-editor mini>Time travel logging...</ride-text-editor>
+                      </div>
+                      <div class='block'>
+                        <div class="control-wrap">
+                          <div class="controls">
+                            <div class="btn-justify">
+                              <button class='btn icon icon-gear inline-block-tight'>Settings</button>
+                              <button class='btn btn-primary icon icon-device-desktop inline-block-tight'>Log</button>
+                              <button class='btn btn-error icon icon-bug inline-block-tight'>Errors</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </main>
+            </div>
+          </div>
+        </ride-pane>
+      </ride-pane-axis>
+    </ride-pane-container>
+
+    <ride-panel-container class="footer">
+      <ride-panel class="footer tool-panel panel-footer">
+        <status-bar class="status-bar">
+          <div class="flexbox-repaint-hack">
+            <div class="status-bar-left">
+            </div>
+            <div class="status-bar-right">
+              <div class="deprecation-cop-status inline-block text-warning"><span class="icon icon-alert"></span><span class="deprecation-number">8 deprecations</span></div>
+              <div class="package-updates-status-view inline-block text text-info">
+                <span class="icon icon-package"></span>
+                <span class="available-updates-status">7 updates</span>
+              </div>
+            </div>
+          </div>
+        </status-bar>
+      </ride-panel>
+    </ride-panel-container>
+
+  </ride-workspace>
+  <script src="bundle.js"></script>
+  <script src="../node_modules/monaco-editor/min/vs/loader.js"></script>
+  <script>
+    require.config({
+      paths: {
+        'vs': '../node_modules/monaco-editor/min/vs'
+      }
+    });
+    require.config({
+      'vs/nls': {
+        availableLanguages: {
+          '*': 'de'
+        }
+      }
+    });
+    require(['vs/editor/editor.main'], function () {
+      var editor = monaco.editor.create(document.getElementById('editor-container'), {
+        value: [
+          'function x() {',
+          '\tconsole.log("Hello world!");',
+          '}'
+        ].join('\n'),
+        language: 'javascript',
+        theme: "vs-dark",
+      });
+    });
+  </script>
+</body>
+
+</html>
