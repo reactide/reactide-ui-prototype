@@ -1,0 +1,78 @@
+
+ride-pane-container {
+  padding-top: @ui-padding-pane;
+
+  ride-pane {
+    position: relative;
+
+    .item-views {
+      border: 1px solid @pane-item-border-color;
+      border-top: none;
+
+      // prevent ride-text-editor from leaking ouside
+      // might improve performance
+      overflow: hidden;
+    }
+  }
+
+  // TODO: Remove once it lands in core
+  ride-pane-axis {
+    & > ride-pane-resize-handle {
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        z-index: 3;
+      }
+    }
+  }
+
+  ride-pane-axis.vertical {
+    & > ride-pane-resize-handle {
+      &:before {
+        height: 8px;
+        top: -4px;
+        left: 0;
+        right: 0;
+        cursor: row-resize;
+      }
+    }
+  }
+
+  ride-pane-axis.horizontal {
+    & > ride-pane-resize-handle {
+      &:before {
+        width: 8px;
+        left: -4px;
+        top: 0;
+        bottom: 0;
+        cursor: col-resize;
+      }
+    }
+  }
+
+
+  // Add some space between panes
+  ride-pane-resize-handle.horizontal.horizontal,
+  ride-pane-resize-handle.vertical.vertical {
+    margin: 0;
+  }
+  ride-pane-resize-handle.horizontal.horizontal {
+    width: @ui-padding-pane;
+    height: initial;
+  }
+  ride-pane-resize-handle.vertical.vertical {
+    width: initial;
+    height: @ui-padding-pane;
+  }
+
+  ride-pane-resize-handle.horizontal.horizontal:before {
+    width: inherit;
+    left: initial;
+  }
+  ride-pane-resize-handle.vertical.vertical:before {
+    height: inherit;
+    top: initial;
+  }
+
+}
