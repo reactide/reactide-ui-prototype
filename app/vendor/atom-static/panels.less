@@ -1,0 +1,25 @@
+@import "variables/ui-variables";
+
+// Atom panels
+
+ride-panel-container.left,
+ride-panel-container.right {
+  display: flex;
+}
+
+.tool-panel, // deprecated: .tool-panel
+ride-panel {
+  display: block;
+  position: relative;
+}
+
+ride-panel-container > ride-panel.left,
+ride-panel-container > ride-panel.right {
+  display: flex;
+}
+
+// Some packages use `height: 100%` which doesn't play nice with flexbox
+ride-panel-container > ride-panel.left > *,
+ride-panel-container > ride-panel.right > * {
+  height: initial;
+}
