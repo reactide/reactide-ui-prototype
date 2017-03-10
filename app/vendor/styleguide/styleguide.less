@@ -1,0 +1,472 @@
+.styleguide {
+
+  // Text colors
+  .color( text-color );
+  .color( text-color-subtle );
+  .color( text-color-highlight );
+  .color( text-color-selected );
+  .color( text-color-info );
+  .color( text-color-success );
+  .color( text-color-warning );
+  .color( text-color-error );
+
+  // Background colors
+  .color( background-color-info );
+  .color( background-color-success );
+  .color( background-color-warning );
+  .color( background-color-error );
+  .color( background-color-highlight );
+  .color( background-color-selected );
+  .color( app-background-color );
+
+  // Base colors
+  .color( base-background-color );
+  .color( base-border-color );
+
+  // Pane colors
+  .color( pane-item-background-color );
+  .color( pane-item-border-color );
+
+  // Input colors
+  .color( input-background-color );
+  .color( input-border-color );
+
+  // Panel colors
+  .color( tool-panel-background-color );
+  .color( tool-panel-border-color );
+  .color( inset-panel-background-color );
+  .color( inset-panel-border-color );
+  .color( panel-heading-background-color );
+  .color( panel-heading-border-color );
+  .color( overlay-background-color );
+  .color( overlay-border-color );
+
+  // Button colors
+  .color( button-background-color );
+  .color( button-background-color-hover );
+  .color( button-background-color-selected );
+  .color( button-border-color );
+
+  // Tab colors
+  .color( tab-bar-background-color );
+  .color( tab-bar-border-color );
+  .color( tab-background-color );
+  .color( tab-background-color-active );
+  .color( tab-border-color );
+
+  // Tree-view colors
+  .color( tree-view-background-color );
+  .color( tree-view-border-color );
+
+  // Site colors
+  .color( ui-site-color-1 );
+  .color( ui-site-color-2 );
+  .color( ui-site-color-3 );
+  .color( ui-site-color-4 );
+  .color( ui-site-color-5 );
+
+  // Component sizes
+  .size( disclosure-arrow-size );
+  .size( component-padding );
+  .size( component-icon-padding );
+  .size( component-icon-size );
+  .size( component-line-height );
+  .size( tab-height );
+  .size( font-size );
+
+  // Misc
+  .radius( component-border-radius );
+  .font( font-family );
+
+
+  // Visualize --------------------------------
+
+  .is-color:before,
+  .is-size:after,
+  .is-radius:after {
+    content: "";
+    display: inline-block;
+    height: 20px;
+    vertical-align: middle;
+  }
+  .is-color:before {
+    margin-right: @component-padding*1.5;
+    width: 20%;
+  }
+  .is-size:after {
+    margin-left: @component-padding*1.5;
+    height: 4px;
+    background-color: @text-color;
+  }
+  .is-radius:after {
+    width: 20px;
+    margin-left: @component-padding*1.5;
+    background-color: @text-color;
+  }
+  .is-font:after {
+    margin-left: @component-padding;
+    color: @text-color-highlight;
+  }
+
+
+  // Mixins --------------------------------
+
+  .color(@variable) {
+    .is-color.@{variable}:before {
+      background-color: @@variable;
+    }
+  }
+
+  .size(@variable) {
+    .is-size.@{variable}:after {
+      width: @@variable;
+    }
+  }
+
+  .radius(@variable) {
+    .is-radius.@{variable}:after {
+      border-radius: @@variable;
+    }
+  }
+
+  .font(@variable) {
+    .is-font.@{variable}:after {
+      content: @@variable;
+      font-family: @@variable;
+    }
+  }
+
+
+  // Custom styling for vars --------------------------------
+
+  .example-code {
+    display: none; // remove, doesn't make much sense here
+  }
+}
+
+//
+// This adds some component styles specifically for the Styleguide
+// --------------------------------
+
+.styleguide {
+
+  // Icons ---------------
+
+
+    .example-rendered {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-start;
+    }
+
+    .example-code {
+      display: none; // remove, doesn't make much sense here
+    }
+
+    // .icon {
+    //   position: relative;
+    //   flex: 1 0 200px;
+    //   padding: 10px 0 10px 40px;
+    //   color: @text-color-subtle;
+    //   &:before {
+    //     position: absolute;
+    //     margin-left: -32px;
+    //     color: @text-color-highlight;
+    //     text-align: center;
+    //   }
+    //   &:hover {
+    //     color: @text-color-highlight;
+    //     &:before {
+    //       color: @text-color-selected;
+    //       font-size: 32px;
+    //       width: 32px;
+    //       height: 32px;
+    //       margin-top: -8px;
+    //       margin-left: -40px; // 32px (initial) + 8px (grow)
+    //     }
+    //   }
+    // }
+
+    // // Make the Gist logo bigger
+    // .icon-logo-gist {
+    //   &:before,
+    //   &:hover:before {
+    //     font-size: 2.5em;
+    //     margin-top: -.05em;
+    //     margin-left: -1.3em;
+    //     width: 16px;
+    //     height: 16px;
+    //   }
+    // }
+
+    // // Make the GitHub logo bigger
+    // .icon-logo-github {
+    //   &:before,
+    //   &:hover:before {
+    //     font-size: 3em;
+    //     margin-top: .08em;
+    //     margin-left: -1.2em;
+    //   }
+    // }
+
+
+  // Inputs + controls ---------------
+
+  .input-search,
+  .input-textarea {
+    margin-top: @component-padding;
+  }
+
+  .input-label {
+    display: block;
+    width: -webkit-max-content;
+    margin: 0 1em 1em 0;
+  }
+
+  .input-color,
+  .input-number,
+  .input-select {
+    margin: 0 @component-padding 0 0 !important;
+  }
+
+
+  // Site colors ---------------
+
+  .ui-site-1,
+  .ui-site-2,
+  .ui-site-3,
+  .ui-site-4,
+  .ui-site-5 {
+    height: 10px;
+    width: 100px;
+  }
+
+
+  // Modals ---------------
+
+  ride-panel.modal {
+    // makde them responsive in the styleguide
+    position: relative;
+    max-width: 100%;
+    left: 0;
+    margin: 0;
+  }
+
+
+  // Misc ---------------
+
+  .popover-list {
+    position: relative;
+  }
+
+  .popover-list,
+  .select-list {
+    ride-text-editor[mini] { height: 27px; }
+  }
+
+  .tooltip {
+    position: relative;
+    opacity: 1;
+    display: inline-block;
+    margin-right: @component-padding;
+  }
+
+  [data-name="error-messages"] .example-rendered {
+    min-height: 60px; // don't cut off centered messages
+  }
+
+}
+
+@styleguide-spacing: @component-padding *1.5;
+@styleguide-bg: darken(@base-background-color, 2%);
+
+.styleguide {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+.styleguide-controls {
+  position: absolute;
+  right: @component-padding;
+  top: @component-padding;
+  z-index: 100;
+}
+
+.styleguide-header {
+  padding: @styleguide-spacing;
+  border-bottom: 1px solid @base-border-color;
+  h1 {
+    font-size: 2em;
+    margin: 0 0 .5em 0;
+    color: @text-color-highlight;
+  }
+  p {
+    font-size: 1.2em;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.styleguide-sections {
+  flex: 1;
+  overflow: auto;
+
+  & > section {
+    background-color: @styleguide-bg;
+    padding: 0;
+    border-bottom: 1px solid @base-border-color;
+    border-top: none;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &.collapsed {
+      background-color: @base-background-color;
+      > .section-heading {
+        display: block;
+        margin: 0;
+        padding-bottom: @styleguide-spacing;
+        color: @text-color;
+        &:hover {
+          color: @text-color-highlight;
+          background-color: @background-color-highlight;
+        }
+        &:active {
+          background-color: @base-background-color;
+        }
+      }
+      > * {
+        display: none
+      }
+    }
+  }
+
+  .section-heading.section-heading {
+    padding: @styleguide-spacing @styleguide-spacing 0 @styleguide-spacing;
+    cursor: pointer;
+    font-weight: normal;
+    font-size: 1.8em;
+    color: @text-color-highlight;
+  }
+
+  section > h2 {
+    font-size: 1.5em;
+    line-height: 1.2;
+    margin: 1em @styleguide-spacing 0 @styleguide-spacing;
+    color: @text-color-highlight;
+  }
+
+  section > h3 {
+    font-size: 1.2em;
+    line-height: .9;
+    margin: 1em @styleguide-spacing 0 @styleguide-spacing;
+    color: @text-color-highlight;
+  }
+
+  section > p {
+    font-size: 1.1em;
+    margin: .5em @styleguide-spacing 1em @styleguide-spacing;
+  }
+}
+
+// Example -------------------------------
+
+.styleguide .example {
+  @example-background: @base-background-color;
+
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: @component-border-radius;
+  padding: @component-padding / 2;
+
+  .example-rendered,
+  .example-code {
+    position: relative;
+    flex: 1 1 300px;
+    min-width: 0;
+    margin: @component-padding / 2;
+    border-radius: @component-border-radius;
+    border: 1px solid @tool-panel-border-color;
+  }
+
+  .example-rendered {
+    padding: @component-padding;
+    background: @example-background;
+    overflow: hidden;
+  }
+
+  .example-code {
+    background-color: @syntax-background-color;
+    pre {
+      border: none;
+      background-color: inherit;
+    }
+  }
+}
+
+// Ride Edits
+
+.styleguide .control {
+  @example-background: @base-background-color;
+
+  border-radius: @component-border-radius;
+  padding: @component-padding / 2;
+
+  .control-rendered,
+  .control-code {
+    position: relative;
+    min-width: 0;
+    margin: @component-padding / 2;
+    border-radius: @component-border-radius;
+    border: 1px solid @tool-panel-border-color;
+  }
+
+  .control-rendered {
+    padding: @component-padding;
+    background: @example-background;
+    overflow: hidden;
+  }
+
+  .control-code {
+    background-color: @syntax-background-color;
+    pre {
+      border: none;
+      background-color: inherit;
+    }
+  }
+
+  .control-wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .label, label {
+      flex: 1.2 0 0;
+      text-align: right;
+      margin: .5em 8px .5em -6px;
+    }
+
+    .controls {
+      flex: 2.8 0 0;
+
+      select {
+        width: 100%;
+      }
+
+      .btn-group, .btn-justify {
+        display: flex;
+
+        .btn {
+          flex: 1;
+        }
+      }
+    }
+  }
+}
